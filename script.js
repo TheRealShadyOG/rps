@@ -1,12 +1,22 @@
 // Computer chooses between Rock Paper and Scissors
 function getComputerChoice() {
-    let choices = ['Rock', 'Paper', 'Scissors'];
+    let choices = ['rock', 'paper', 'scissors'];
     let computerChoice = choices[Math.floor(Math.random()*choices.length)];
     return computerChoice;
 }
 
-console.log(getComputerChoice())
+console.log(getComputerChoice());
 
 // Player selection
+function playerChoice() {
+    playerSelection = prompt("Rock, Paper, or Scissors?").toLowerCase();
+    return playerSelection; 
+}
+
+playerChoice();
+console.log(playerSelection);
+
+// Play round
 // Evaluate round winner
+// Reset and go to next round
 // Make game winner first to 5
