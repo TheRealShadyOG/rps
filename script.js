@@ -10,12 +10,12 @@ let computerSelection = getComputerChoice()
 console.log(computerSelection)
 
 // Player selection
-function playerChoice() {
-    playerSelection = prompt("Rock, Paper, or Scissors?").toLowerCase();
-    return playerSelection; 
+function getPlayerChoice() {
+    let playerChoice = prompt("Rock, Paper, or Scissors?").toLowerCase();
+    return playerChoice; 
 }
 
-playerChoice();
+let playerSelection = getPlayerChoice();
 console.log(playerSelection);
 
 // Play round
