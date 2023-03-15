@@ -5,7 +5,9 @@ function getComputerChoice() {
     return computerChoice;
 }
 
-console.log(getComputerChoice());
+let computerSelection = getComputerChoice()
+
+console.log(computerSelection)
 
 // Player selection
 function playerChoice() {
