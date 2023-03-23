@@ -51,6 +51,10 @@ function playRound() {
 console.log(playRound(playerSelection, computerSelection));
 
 
-// Make game winner first to 5
+// Make game function
+// Call computer and player selection
+// Call playRound to start round 1
 // Evaluate round winner
-// Reset and go to next round
+// Store winner in variable
+// Reset and go to next round 
+// Make game winner first to 5
