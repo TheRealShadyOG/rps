@@ -39,15 +39,15 @@ function playRound() {
     } else if (playerSelection === "scissors" && computerSelection === "paper") { // Player wins with scissors
         winner = "player";
         let playerWins = "You won with Scissors!";
-        winnerMsg =playerWins;
+        winnerMsg = playerWins;
     } else if (playerSelection === "scissors" && computerSelection === "rock") { // Computer wins with rock
         winner = "computer";
         let computerWins = "The computer won with Rock!";
-        winnerMsg =computerWins;
+        winnerMsg = computerWins;
     } else if (playerSelection === "rock" && computerSelection === "paper") { // Computer wins with paper
         winner = "computer";
         let computerWins = "The computer won with Paper!";
-        winnerMsg =computerWins;
+        winnerMsg = computerWins;
     } else if (playerSelection === "paper" && computerSelection === "scissors") { // Computer wins with scissors
         winner = "computer";
         let computerWins = "The computer won with Scissors!";
@@ -58,10 +58,6 @@ function playRound() {
         winnerMsg = playerChoiceError;
     }
 }
-
-playRound()
-console.log(winnerMsg);
-console.log(winner)
 
 // Evaluate round winner
 let playerScore = 0;
@@ -75,11 +71,23 @@ function evaluteWinner() {
     }
 }
 
-evaluteWinner()
-console.log("player" + playerScore)
-console.log("computer" + computerScore)
-
 // Make game function
+function game() {
+    playRound();
+    console.log(winnerMsg);
+    console.log(winner);
+
+    evaluteWinner();
+    console.log("player: " + playerScore);
+    console.log("computer: " + computerScore);
+}
+
+game()
+game()
+game()
+game()
+game()
+
 // Call computer and player selection
 // Call playRound to start round 1
 // Store winner in variable
