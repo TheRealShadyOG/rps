@@ -11,6 +11,7 @@ function getPlayerChoice() {
     return playerChoice; 
 }
 
+// Variables used for playRound function
 let winner;
 let winnerMsg;
 let computerSelection;
@@ -18,12 +19,14 @@ let playerSelection;
 
 // Play round
 function playRound() {
+    // Call computer and player selection
     computerSelection = getComputerChoice();
     console.log(computerSelection);
 
     playerSelection = getPlayerChoice();
     console.log(playerSelection);
 
+    // Determining winner and winnerMsg
     if (playerSelection === computerSelection) { // Both choose the same 
         winner = "nobody";
         let tieGame = `Its a draw, you both chose ${playerSelection}.`;
@@ -59,10 +62,11 @@ function playRound() {
     }
 }
 
-// Evaluate round winner
+// Variables for evaluateWinner function
 let playerScore = 0;
 let computerScore = 0;
 
+// Evaluate round winner
 function evaluteWinner() {
     if (winner === "player") {
         playerScore++
@@ -73,10 +77,12 @@ function evaluteWinner() {
 
 // Make game function
 function game() {
+    // Calling playRound to start first round
     playRound();
     console.log(winnerMsg);
     console.log(winner);
 
+    // Call evaluateWinner to find winner of round
     evaluteWinner();
     console.log("player: " + playerScore);
     console.log("computer: " + computerScore);
@@ -88,7 +94,7 @@ game()
 game()
 game()
 
-// Call computer and player selection
+
 // Call playRound to start round 1
 // Store winner in variable
 // Reset and go to next round 
