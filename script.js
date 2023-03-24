@@ -90,14 +90,11 @@ function game() {
     console.log("computer: " + computerScore);
 }
 
-game()
-game()
-game()
-game()
-game()
+// Make game 5 rounds
+function fiveRounds() {
+    for (i = 0; i < 5; i++) {
+        game()
+    }
+}
 
-
-// Call playRound to start round 1
-// Store winner in variable
-// Reset and go to next round 
-// Make game winner first to 5
+fiveRounds()
