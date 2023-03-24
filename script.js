@@ -59,12 +59,27 @@ function playRound() {
 }
 
 console.log(playRound());
+console.log(winner)
 
+// Evaluate round winner
+let playerScore = 0;
+let computerScore = 0;
+
+function evaluteWinner() {
+    if (winner === "player") {
+        playerScore++
+    } else if (winner === "computer") {
+        computerScore++
+    }
+}
+
+evaluteWinner()
+console.log("player" + playerScore)
+console.log("computer" + computerScore)
 
 // Make game function
 // Call computer and player selection
 // Call playRound to start round 1
-// Evaluate round winner
 // Store winner in variable
 // Reset and go to next round 
 // Make game winner first to 5
