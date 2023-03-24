@@ -13,11 +13,11 @@ function getPlayerChoice() {
 
 // Play round
 function playRound() {
-    let computerSelection = getComputerChoice()
-    console.log(computerSelection)
+    let computerSelection = getComputerChoice();
+    console.log(computerSelection);
 
-    let playerSelection = getPlayerChoice()
-    console.log(playerSelection)
+    let playerSelection = getPlayerChoice();
+    console.log(playerSelection);
 
     if (playerSelection === computerSelection) { // Both choose the same 
         let tieGame = `Its a draw, you both chose ${playerSelection}`;
