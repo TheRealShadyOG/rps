@@ -11,12 +11,16 @@ function getPlayerChoice() {
     return playerChoice; 
 }
 
+let winner;
+let computerSelection;
+let playerSelection;
+
 // Play round
 function playRound() {
-    let computerSelection = getComputerChoice();
+    computerSelection = getComputerChoice();
     console.log(computerSelection);
 
-    let playerSelection = getPlayerChoice();
+    playerSelection = getPlayerChoice();
     console.log(playerSelection);
 
     if (playerSelection === computerSelection) { // Both choose the same 
