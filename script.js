@@ -24,27 +24,35 @@ function playRound() {
     console.log(playerSelection);
 
     if (playerSelection === computerSelection) { // Both choose the same 
+        winner = "nobody";
         let tieGame = `Its a draw, you both chose ${playerSelection}`;
         return tieGame;
     } else if (playerSelection === "rock" && computerSelection === "scissors") { // Player wins with rock
+        winner = "player";
         let playerWins = "You won with Rock!";
         return playerWins;
     } else if (playerSelection === "paper" && computerSelection === "rock") { // Player wins with paper
+        winner = "player";
         let playerWins = "You won with Paper!";
         return playerWins;
     } else if (playerSelection === "scissors" && computerSelection === "paper") { // Player wins with scissors
+        winner = "player";
         let playerWins = "You won with Scissors!";
         return playerWins;
     } else if (playerSelection === "scissors" && computerSelection === "rock") { // Computer wins with rock
+        winner = "computer";
         let computerWins = "The computer won with Rock!";
         return computerWins;
     } else if (playerSelection === "rock" && computerSelection === "paper") { // Computer wins with paper
+        winner = "computer";
         let computerWins = "The computer won with Paper!";
         return computerWins;
     } else if (playerSelection === "paper" && computerSelection === "scissors") { // Computer wins with scissors
+        winner = "computer";
         let computerWins = "The computer won with Scissors!";
         return computerWins;
     } else { // Player enter invalid choice
+        winner = "nobody";
         let playerChoiceError = "You chose an invalid option, Please refresh page!";
         return playerChoiceError;
     }
