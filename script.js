@@ -59,6 +59,8 @@ function playRound() {
         winner = "nobody";
         let playerChoiceError = "You chose an invalid option, Please refresh page!";
         winnerMsg = playerChoiceError;
+        // If user input invalid, redo round
+        playRound()
     }
 }
 
