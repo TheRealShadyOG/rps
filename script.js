@@ -5,22 +5,20 @@ function getComputerChoice() {
     return computerChoice;
 }
 
-let computerSelection = getComputerChoice()
-
-console.log(computerSelection)
-
 // Player selection
 function getPlayerChoice() {
     let playerChoice = prompt("Rock, Paper, or Scissors?").toLowerCase();
     return playerChoice; 
 }
 
-let playerSelection = getPlayerChoice();
-
-console.log(playerSelection);
-
 // Play round
 function playRound() {
+    let computerSelection = getComputerChoice()
+    console.log(computerSelection)
+
+    let playerSelection = getPlayerChoice()
+    console.log(playerSelection)
+
     if (playerSelection === computerSelection) { // Both choose the same 
         let tieGame = `Its a draw, you both chose ${playerSelection}`;
         return tieGame;
@@ -48,7 +46,7 @@ function playRound() {
     }
 }
 
-console.log(playRound(playerSelection, computerSelection));
+console.log(playRound());
 
 
 // Make game function
