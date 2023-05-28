@@ -16,22 +16,21 @@ function playRound(selection) {
     // Call computer selection
     computerSelection = getComputerChoice();
 
-    const computer = document.querySelector("#player");
+    const choices = document.querySelector("#choices");
 
-    const computerChoice = document.createElement("div");
-    computerChoice.classList.add("computer");
-    computerChoice.textContent = "The computer chose " + computerSelection;
+    const computer = document.createElement("div");
+    computer.classList.add("computer");
+    computer.textContent = "The computer chose " + computerSelection;
 
-    computer.appendChild(computerChoice);
+    choices.appendChild(computer);
 
     playerSelection = selection;
-    const player = document.querySelector("#player");
 
-    const playerChoice = document.createElement("div");
-    playerChoice.classList.add("playerChoice");
-    playerChoice.textContent = "You chose " + playerSelection;
+    const player = document.createElement("div");
+    player.classList.add("player");
+    player.textContent = "You chose " + playerSelection;
 
-    player.appendChild(playerChoice);
+    choices.appendChild(player);
 
     // Determining winner and winnerMsg
     if (playerSelection === computerSelection) { // Both choose the same 
@@ -62,7 +61,7 @@ function playRound(selection) {
         winner = "computer";
         let computerWins = "The computer won with Scissors!";
         winnerMsg = computerWins;
-    } else { // Player enter invalid choice
+    } else { // Player enter invalid choice (No longer Valid)
         winner = "nobody";
         let playerChoiceError = "You chose an invalid option, Please refresh page!";
         winnerMsg = playerChoiceError;
@@ -92,6 +91,7 @@ function evaluteWinner() {
     }
 }
 
+/*
 // Make game function
 function game() {
     // Calling playRound to start first round
@@ -112,8 +112,8 @@ function fiveRounds() {
     }
 }
 
-//fiveRounds()
-
+fiveRounds()
+*/
 
 // Make event listeners for buttons
 const rock = document.querySelector("#rock");
