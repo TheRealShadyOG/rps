@@ -5,12 +5,6 @@ function getComputerChoice() {
     return computerChoice;
 }
 
-// Player selection
-//function getPlayerChoice() {
-//    let playerChoice = prompt("Rock, Paper, or Scissors?").toLowerCase();
-//    return playerChoice; 
-//}
-
 // Variables used for playRound function
 let winner;
 let winnerMsg;
@@ -21,10 +15,23 @@ let playerSelection;
 function playRound(selection) {
     // Call computer selection
     computerSelection = getComputerChoice();
-    console.log(computerSelection);
+
+    const computer = document.querySelector("#player");
+
+    const computerChoice = document.createElement("div");
+    computerChoice.classList.add("computer");
+    computerChoice.textContent = "The computer chose " + computerSelection;
+
+    computer.appendChild(computerChoice);
 
     playerSelection = selection;
-    console.log(playerSelection);
+    const player = document.querySelector("#player");
+
+    const playerChoice = document.createElement("div");
+    playerChoice.classList.add("playerChoice");
+    playerChoice.textContent = "You chose " + playerSelection;
+
+    player.appendChild(playerChoice);
 
     // Determining winner and winnerMsg
     if (playerSelection === computerSelection) { // Both choose the same 
@@ -62,6 +69,14 @@ function playRound(selection) {
         // If user input invalid, redo round
         playRound()
     }
+
+    const results = document.querySelector("#results");
+
+    const content = document.createElement("div");
+    content.classList.add("content");
+    content.textContent = winnerMsg;
+
+    results.appendChild(content);
 }
 
 // Variables for evaluateWinner function
