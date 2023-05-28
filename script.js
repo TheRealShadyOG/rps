@@ -97,4 +97,21 @@ function fiveRounds() {
     }
 }
 
-fiveRounds()
+//fiveRounds()
+
+
+// Make event listeners for buttons
+const rock = document.querySelector("#rock");
+rock.addEventListener("click", () => {
+    playRound()
+}); 
+
+const paper = document.querySelector("#paper");
+paper.addEventListener("click", () => {
+    playRound()
+});
+
+const scissors = document.querySelector("#scissors");
+scissors.addEventListener("click", () => {
+    playRound()
+});
