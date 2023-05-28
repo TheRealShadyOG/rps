@@ -6,10 +6,10 @@ function getComputerChoice() {
 }
 
 // Player selection
-function getPlayerChoice() {
-    let playerChoice = prompt("Rock, Paper, or Scissors?").toLowerCase();
-    return playerChoice; 
-}
+//function getPlayerChoice() {
+//    let playerChoice = prompt("Rock, Paper, or Scissors?").toLowerCase();
+//    return playerChoice; 
+//}
 
 // Variables used for playRound function
 let winner;
@@ -18,12 +18,12 @@ let computerSelection;
 let playerSelection;
 
 // Play round
-function playRound() {
-    // Call computer and player selection
+function playRound(selection) {
+    // Call computer selection
     computerSelection = getComputerChoice();
     console.log(computerSelection);
 
-    playerSelection = getPlayerChoice();
+    playerSelection = selection;
     console.log(playerSelection);
 
     // Determining winner and winnerMsg
@@ -103,15 +103,15 @@ function fiveRounds() {
 // Make event listeners for buttons
 const rock = document.querySelector("#rock");
 rock.addEventListener("click", () => {
-    playRound()
+    playRound("rock")
 }); 
 
 const paper = document.querySelector("#paper");
 paper.addEventListener("click", () => {
-    playRound()
+    playRound("paper")
 });
 
 const scissors = document.querySelector("#scissors");
 scissors.addEventListener("click", () => {
-    playRound()
+    playRound("scissors")
 });
