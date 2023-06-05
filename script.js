@@ -32,8 +32,8 @@ function playRound(selection) {
 
     evaluteWinner()
 
-    scorePlayer.textContent = playerScore;
-    scoreComputer.textContent = computerScore;
+    scorePlayer.textContent = "Player " + playerScore;
+    scoreComputer.textContent = "Computer " + computerScore;
 
     findGameWinner(playerScore, computerScore)
 }
