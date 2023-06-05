@@ -147,13 +147,13 @@ const score = document.querySelector("#score");
 
 const scorePlayer = document.createElement("div");
 scorePlayer.classList.add("scorePlayer");
-scorePlayer.textContent = playerScore;
+scorePlayer.textContent = "Player " + playerScore;
 
 score.appendChild(scorePlayer);
 
 const scoreComputer = document.createElement("div");
 scoreComputer.classList.add("scoreComputer");
-scoreComputer.textContent = computerScore;
+scoreComputer.textContent = "Computer " + computerScore;
 
 score.appendChild(scoreComputer);
 
