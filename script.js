@@ -34,6 +34,8 @@ function playRound(selection) {
 
     scorePlayer.textContent = playerScore;
     scoreComputer.textContent = computerScore;
+
+    findGameWinner(playerScore, computerScore)
 }
 
 // Variables for evaluateWinner function
@@ -81,6 +83,27 @@ if (playerSelection === computerSelection) { // Both choose the same
     winnerMsg = computerWins;
 }};
 
+// Display game winner 
+function findGameWinner(playerScore, computerScore) {
+    if (playerScore === 5) {
+        const gameOver = document.querySelector("#gameOver");
+
+        const winnerPlayer = document.createElement("div");
+        winnerPlayer.classList.add("winnerPlayer");
+        winnerPlayer.textContent = "The Player Won The Game: " + playerScore + " / " + computerScore;
+
+        gameOver.appendChild(winnerPlayer);
+    } else if (computerScore === 5) {
+        const gameOver = document.querySelector("#gameOver");
+
+        const winnerComputer = document.createElement("div");
+        winnerComputer.classList.add("winnerComputer");
+        winnerComputer.textContent = "The Computer Won The Game: " + computerScore + " / " + playerScore;
+
+        gameOver.appendChild(winnerComputer);
+    } 
+}
+
 // Display Choices
 const choices = document.querySelector("#choices");
 
@@ -108,9 +131,6 @@ scoreComputer.classList.add("scoreComputer");
 scoreComputer.textContent = computerScore;
 
 score.appendChild(scoreComputer);
-
-console.log(playerScore)
-console.log(computerScore)
 
 /*
 // Make game function
