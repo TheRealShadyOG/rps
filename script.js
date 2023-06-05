@@ -20,36 +20,7 @@ function playRound(selection) {
     computer.textContent = "The computer chose " + computerSelection;
     player.textContent = "You chose " + playerSelection;
 
-    // Determining winner and winnerMsg
-    if (playerSelection === computerSelection) { // Both choose the same 
-        winner = "nobody";
-        let tieGame = `Its a draw, you both chose ${playerSelection}.`;
-        winnerMsg = tieGame;
-    } else if (playerSelection === "rock" && computerSelection === "scissors") { // Player wins with rock
-        winner = "player";
-        let playerWins = "You won with Rock!";
-        winnerMsg = playerWins;
-    } else if (playerSelection === "paper" && computerSelection === "rock") { // Player wins with paper
-        winner = "player";
-        let playerWins = "You won with Paper!";
-        winnerMsg = playerWins;
-    } else if (playerSelection === "scissors" && computerSelection === "paper") { // Player wins with scissors
-        winner = "player";
-        let playerWins = "You won with Scissors!";
-        winnerMsg = playerWins;
-    } else if (playerSelection === "scissors" && computerSelection === "rock") { // Computer wins with rock
-        winner = "computer";
-        let computerWins = "The computer won with Rock!";
-        winnerMsg = computerWins;
-    } else if (playerSelection === "rock" && computerSelection === "paper") { // Computer wins with paper
-        winner = "computer";
-        let computerWins = "The computer won with Paper!";
-        winnerMsg = computerWins;
-    } else if (playerSelection === "paper" && computerSelection === "scissors") { // Computer wins with scissors
-        winner = "computer";
-        let computerWins = "The computer won with Scissors!";
-        winnerMsg = computerWins;
-    } 
+    determineWinner()
 
     const results = document.querySelector("#results");
 
@@ -78,6 +49,38 @@ function evaluteWinner() {
     }
 }
 
+// Determining winner and winnerMsg
+function determineWinner() {
+if (playerSelection === computerSelection) { // Both choose the same 
+    winner = "nobody";
+    let tieGame = `Its a draw, you both chose ${playerSelection}.`;
+    winnerMsg = tieGame;
+} else if (playerSelection === "rock" && computerSelection === "scissors") { // Player wins with rock
+    winner = "player";
+    let playerWins = "You won with Rock!";
+    winnerMsg = playerWins;
+} else if (playerSelection === "paper" && computerSelection === "rock") { // Player wins with paper
+    winner = "player";
+    let playerWins = "You won with Paper!";
+    winnerMsg = playerWins;
+} else if (playerSelection === "scissors" && computerSelection === "paper") { // Player wins with scissors
+    winner = "player";
+    let playerWins = "You won with Scissors!";
+    winnerMsg = playerWins;
+} else if (playerSelection === "scissors" && computerSelection === "rock") { // Computer wins with rock
+    winner = "computer";
+    let computerWins = "The computer won with Rock!";
+    winnerMsg = computerWins;
+} else if (playerSelection === "rock" && computerSelection === "paper") { // Computer wins with paper
+    winner = "computer";
+    let computerWins = "The computer won with Paper!";
+    winnerMsg = computerWins;
+} else if (playerSelection === "paper" && computerSelection === "scissors") { // Computer wins with scissors
+    winner = "computer";
+    let computerWins = "The computer won with Scissors!";
+    winnerMsg = computerWins;
+}};
+
 // Display Choices
 const choices = document.querySelector("#choices");
 
@@ -85,8 +88,6 @@ const computer = document.createElement("div");
 computer.classList.add("computer");
 
 choices.appendChild(computer);
-
-
 
 const player = document.createElement("div");
 player.classList.add("player");
@@ -108,6 +109,8 @@ scoreComputer.textContent = computerScore;
 
 score.appendChild(scoreComputer);
 
+console.log(playerScore)
+console.log(computerScore)
 
 /*
 // Make game function
