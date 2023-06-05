@@ -61,13 +61,7 @@ function playRound(selection) {
         winner = "computer";
         let computerWins = "The computer won with Scissors!";
         winnerMsg = computerWins;
-    } else { // Player enter invalid choice (No longer Valid)
-        winner = "nobody";
-        let playerChoiceError = "You chose an invalid option, Please refresh page!";
-        winnerMsg = playerChoiceError;
-        // If user input invalid, redo round
-        playRound()
-    }
+    } 
 
     const results = document.querySelector("#results");
 
@@ -76,6 +70,11 @@ function playRound(selection) {
     content.textContent = winnerMsg;
 
     results.appendChild(content);
+
+    evaluteWinner()
+
+    scorePlayer.textContent = playerScore;
+    scoreComputer.textContent = computerScore;
 }
 
 // Variables for evaluateWinner function
@@ -90,6 +89,20 @@ function evaluteWinner() {
         computerScore++
     }
 }
+
+// Display scores 
+const scorePlayer = document.createElement("div");
+scorePlayer.classList.add("scorePlayer");
+scorePlayer.textContent = playerScore;
+
+score.appendChild(scorePlayer);
+
+const scoreComputer = document.createElement("div");
+scoreComputer.classList.add("scoreComputer");
+scoreComputer.textContent = computerScore;
+
+score.appendChild(scoreComputer);
+
 
 /*
 // Make game function
@@ -118,15 +131,15 @@ fiveRounds()
 // Make event listeners for buttons
 const rock = document.querySelector("#rock");
 rock.addEventListener("click", () => {
-    playRound("rock")
+    playRound("rock");
 }); 
 
 const paper = document.querySelector("#paper");
 paper.addEventListener("click", () => {
-    playRound("paper")
+    playRound("paper");
 });
 
 const scissors = document.querySelector("#scissors");
 scissors.addEventListener("click", () => {
-    playRound("scissors")
+    playRound("scissors");
 });
