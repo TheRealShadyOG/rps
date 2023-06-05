@@ -93,6 +93,8 @@ function findGameWinner(playerScore, computerScore) {
         winnerPlayer.textContent = "The Player Won The Game: " + playerScore + " / " + computerScore;
 
         gameOver.appendChild(winnerPlayer);
+
+        makeResetButton()
     } else if (computerScore === 5) {
         const gameOver = document.querySelector("#gameOver");
 
@@ -101,7 +103,21 @@ function findGameWinner(playerScore, computerScore) {
         winnerComputer.textContent = "The Computer Won The Game: " + computerScore + " / " + playerScore;
 
         gameOver.appendChild(winnerComputer);
+        
+        makeResetButton()
     } 
+}
+
+// Reset Button
+function makeResetButton() {
+    const resetButton = document.createElement("BUTTON");
+    resetButton.classList.add("resetButton");
+    resetButton.textContent = "Reset";
+    resetButton.addEventListener("click", () => {
+        history.go(0);
+    });
+
+    gameOver.appendChild(resetButton);
 }
 
 // Display Choices
