@@ -95,6 +95,7 @@ function findGameWinner(playerScore, computerScore) {
         gameOver.appendChild(winnerPlayer);
 
         makeResetButton()
+        removeOnclick()
     } else if (computerScore === 5) {
         const gameOver = document.querySelector("#gameOver");
 
@@ -103,8 +104,9 @@ function findGameWinner(playerScore, computerScore) {
         winnerComputer.textContent = "The Computer Won The Game: " + computerScore + " / " + playerScore;
 
         gameOver.appendChild(winnerComputer);
-        
+
         makeResetButton()
+        removeOnclick()
     } 
 }
 
@@ -118,6 +120,13 @@ function makeResetButton() {
     });
 
     gameOver.appendChild(resetButton);
+}
+
+// Remove Onclick from buttons
+function removeOnclick() {
+    rock.disabled = true;
+    paper.disabled = true;
+    scissors.disabled = true;
 }
 
 // Display Choices
