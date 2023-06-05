@@ -135,12 +135,11 @@ const choices = document.querySelector("#choices");
 const computer = document.createElement("div");
 computer.classList.add("computer");
 
-choices.appendChild(computer);
-
 const player = document.createElement("div");
 player.classList.add("player");
 
 choices.appendChild(player);
+choices.appendChild(computer);
 
 // Display scores 
 const score = document.querySelector("#score");
