@@ -15,22 +15,10 @@ let playerSelection;
 function playRound(selection) {
     // Call computer selection
     computerSelection = getComputerChoice();
-
-    const choices = document.querySelector("#choices");
-
-    const computer = document.createElement("div");
-    computer.classList.add("computer");
-    computer.textContent = "The computer chose " + computerSelection;
-
-    choices.appendChild(computer);
-
     playerSelection = selection;
 
-    const player = document.createElement("div");
-    player.classList.add("player");
+    computer.textContent = "The computer chose " + computerSelection;
     player.textContent = "You chose " + playerSelection;
-
-    choices.appendChild(player);
 
     // Determining winner and winnerMsg
     if (playerSelection === computerSelection) { // Both choose the same 
@@ -90,7 +78,24 @@ function evaluteWinner() {
     }
 }
 
+// Display Choices
+const choices = document.querySelector("#choices");
+
+const computer = document.createElement("div");
+computer.classList.add("computer");
+
+choices.appendChild(computer);
+
+
+
+const player = document.createElement("div");
+player.classList.add("player");
+
+choices.appendChild(player);
+
 // Display scores 
+const score = document.querySelector("#score");
+
 const scorePlayer = document.createElement("div");
 scorePlayer.classList.add("scorePlayer");
 scorePlayer.textContent = playerScore;
